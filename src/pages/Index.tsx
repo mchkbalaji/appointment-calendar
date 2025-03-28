@@ -21,6 +21,8 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Header from "@/components/Header";
+import { CalendarDays, Clock } from "lucide-react";
 
 const BookingPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -88,20 +90,27 @@ const BookingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container px-4 mx-auto max-w-6xl">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Appointment Booking</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-background to-background/80 bg-hero-pattern bg-fixed">
+      <Header />
+      
+      <div className="container px-4 mx-auto max-w-6xl py-8">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 animate-fade-in">
+            Book Your Appointment
+          </h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg animate-slide-in">
             Select a date and time to schedule your appointment. All appointments are confirmed instantly.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Select a Date</CardTitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col space-y-6 animate-fade-in" style={{animationDelay: "0.1s"}}>
+            <Card className="glass-card shadow-lg">
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-2">
+                  <CalendarDays className="h-5 w-5 text-primary" />
+                  <CardTitle>Select a Date</CardTitle>
+                </div>
                 <CardDescription>
                   Choose your preferred appointment date
                 </CardDescription>
@@ -116,10 +125,13 @@ const BookingPage = () => {
             </Card>
           </div>
 
-          <div className="flex flex-col space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Select a Time</CardTitle>
+          <div className="flex flex-col space-y-6 animate-fade-in" style={{animationDelay: "0.2s"}}>
+            <Card className="glass-card shadow-lg">
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-primary" />
+                  <CardTitle>Select a Time</CardTitle>
+                </div>
                 <CardDescription>
                   Available time slots for {format(selectedDate, "MMMM d, yyyy")}
                 </CardDescription>
@@ -145,9 +157,9 @@ const BookingPage = () => {
 
       {/* Booking Form Dialog */}
       <Dialog open={showBookingModal} onOpenChange={setShowBookingModal}>
-        <DialogContent className={`sm:max-w-md ${isMobile ? 'px-4 py-4' : ''}`}>
+        <DialogContent className={`sm:max-w-md ${isMobile ? 'px-4 py-4' : ''} glass-card`}>
           <DialogHeader>
-            <DialogTitle>Complete Your Booking</DialogTitle>
+            <DialogTitle className="text-xl font-display">Complete Your Booking</DialogTitle>
           </DialogHeader>
           <Separator />
           {isMobile ? (

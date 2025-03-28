@@ -1,0 +1,14 @@
+
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="600" fill="none"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M300 50C182.827 50 88 144.827 88 262V338C88 455.173 182.827 550 300 550C417.173 550 512 455.173 512 338V262C512 144.827 417.173 50 300 50ZM300 60C188.335 60 98 150.335 98 262V338C98 449.665 188.335 540 300 540C411.665 540 502 449.665 502 338V262C502 150.335 411.665 60 300 60Z" fill="#9b87f515"/>
+  <circle cx="300" cy="300" r="16" fill="#9b87f510"/>
+  <circle cx="100" cy="100" r="12" fill="#9b87f508"/>
+  <circle cx="500" cy="100" r="12" fill="#9b87f508"/>
+  <circle cx="100" cy="500" r="12" fill="#9b87f508"/>
+  <circle cx="500" cy="500" r="12" fill="#9b87f508"/>
+  <circle cx="100" cy="300" r="8" fill="#9b87f505"/>
+  <circle cx="500" cy="300" r="8" fill="#9b87f505"/>
+  <circle cx="300" cy="100" r="8" fill="#9b87f505"/>
+  <circle cx="300" cy="500" r="8" fill="#9b87f505"/>
+</svg>
