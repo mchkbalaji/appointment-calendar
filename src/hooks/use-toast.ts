@@ -1,2 +1,3 @@
 
-export { useToast, toast } from "@/components/ui/use-toast";
+// Re-export from the central implementation
+export { useToast, toast } from "@/lib/toast";
