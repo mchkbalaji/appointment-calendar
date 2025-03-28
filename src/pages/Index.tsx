@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import Calendar from "@/components/Calendar";
 import TimeSlots from "@/components/TimeSlots";
@@ -52,7 +53,7 @@ const BookingPage = () => {
     fetchAvailableSlots();
   }, [selectedDate]);
 
-  // Generate a list of dates that have available slots
+  // Generate a list of dates that have available slots for the calendar highlights
   useEffect(() => {
     const generateAvailableDates = async () => {
       // This is a simplified version - in a real app you'd likely have an API endpoint
@@ -89,22 +90,22 @@ const BookingPage = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-br from-background to-background/80 bg-hero-pattern bg-fixed">
+    <div className="min-h-screen bg-gradient-to-br from-background to-background/80 bg-hero-pattern bg-fixed">
       <Header />
       
-      <div className="container flex-1 flex flex-col px-4 mx-auto max-w-6xl py-4">
-        <div className="text-center mb-6">
-          <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2 animate-fade-in">
+      <div className="container px-4 mx-auto max-w-6xl py-8">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 animate-fade-in">
             Book Your Appointment
           </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-base animate-slide-in">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg animate-slide-in">
             Select a date and time to schedule your appointment. All appointments are confirmed instantly.
           </p>
         </div>
 
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col animate-fade-in" style={{animationDelay: "0.1s"}}>
-            <Card className="glass-card flex-1 flex flex-col">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col space-y-6 animate-fade-in" style={{animationDelay: "0.1s"}}>
+            <Card className="glass-card shadow-lg">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-2">
                   <CalendarDays className="h-5 w-5 text-primary" />
@@ -114,7 +115,7 @@ const BookingPage = () => {
                   Choose your preferred appointment date
                 </CardDescription>
               </CardHeader>
-              <CardContent className="flex-1 pb-6">
+              <CardContent>
                 <Calendar 
                   selectedDate={selectedDate} 
                   onDateSelect={setSelectedDate}
@@ -124,8 +125,8 @@ const BookingPage = () => {
             </Card>
           </div>
 
-          <div className="flex flex-col animate-fade-in" style={{animationDelay: "0.2s"}}>
-            <Card className="glass-card flex-1 flex flex-col">
+          <div className="flex flex-col space-y-6 animate-fade-in" style={{animationDelay: "0.2s"}}>
+            <Card className="glass-card shadow-lg">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-2">
                   <Clock className="h-5 w-5 text-primary" />
@@ -135,7 +136,7 @@ const BookingPage = () => {
                   Available time slots for {format(selectedDate, "MMMM d, yyyy")}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="flex-1 pb-6">
+              <CardContent>
                 {isLoading ? (
                   <div className="flex justify-center items-center h-40">
                     <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
