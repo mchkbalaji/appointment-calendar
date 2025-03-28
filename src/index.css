@@ -97,10 +97,6 @@
     @apply border-border;
   }
 
-  html, body {
-    @apply overflow-hidden;
-  }
-
   body {
     @apply bg-background text-foreground font-sans;
   }
@@ -116,9 +112,4 @@
 
 .calendar-highlight {
   @apply after:absolute after:top-0 after:left-0 after:h-full after:w-full after:rounded-full after:bg-primary/20 after:animate-pulse-subtle;
-}
-
-@keyframes pulse-subtle {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
 }
