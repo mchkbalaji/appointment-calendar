@@ -45,7 +45,7 @@ const BookingForm = ({ selectedSlot, onSuccess, onCancel }: BookingFormProps) =>
       notes: "",
     },
   });
-  
+
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     
@@ -79,7 +79,7 @@ const BookingForm = ({ selectedSlot, onSuccess, onCancel }: BookingFormProps) =>
   return (
     <div className="space-y-4 animate-fade-in">
       <div className="p-4 bg-gray-50 rounded-md mb-4">
-        <h3 className="font-semibold mb-2">Appointment Details</h3>
+        <h3 className="font-semibold mb-2"  style={{color:"#9B87F5"}}>Appointment Details</h3>
         <p className="text-sm text-gray-600">Date: {formattedDate}</p>
         <p className="text-sm text-gray-600">
           Time: {selectedSlot.startTime} - {selectedSlot.endTime}
